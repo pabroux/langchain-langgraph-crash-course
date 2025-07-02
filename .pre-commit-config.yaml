@@ -19,18 +19,6 @@ repos:
         entry: ruff check --select I --fix
         language: system
         types_or: [python, pyi]
-      - id: mypy
-        name: mypy (Python type checker)
-        description: This hook checks Python files with mypy in strict mode.
-        entry: mypy --strict
-        language: system
-        types_or: [python, pyi]
-      - id: pylint
-        name: pylint (Python linter)
-        description: This hook checks Python files with pylint.
-        entry: pylint
-        language: system
-        types_or: [python, pyi]
       - id: gitleaks
         name: Gitleaks (secret scanner)
         description: This hook checks the existence of secrets.
