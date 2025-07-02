@@ -1,0 +1,39 @@
+repos:
+  - repo: local
+    hooks:
+      - id: pyupgrade
+        name: pyupgrade (Python syntax upgrader)
+        description: This hook checks Python files with pyupgrade.
+        entry: pyupgrade --py312-plus
+        language: system
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: ruff (Python formatter)
+        description: This hook checks Python files with ruff.
+        entry: ruff format
+        language: system
+        types_or: [python, pyi]
+      - id: ruff-check
+        name: ruff (Python linter & import sorter)
+        description: This hook checks Python files with ruff.
+        entry: ruff check --select I --fix
+        language: system
+        types_or: [python, pyi]
+      - id: mypy
+        name: mypy (Python type checker)
+        description: This hook checks Python files with mypy in strict mode.
+        entry: mypy --strict
+        language: system
+        types_or: [python, pyi]
+      - id: pylint
+        name: pylint (Python linter)
+        description: This hook checks Python files with pylint.
+        entry: pylint
+        language: system
+        types_or: [python, pyi]
+      - id: gitleaks
+        name: Gitleaks (secret scanner)
+        description: This hook checks the existence of secrets.
+        entry: bash -c 'nix shell nixpkgs#gitleaks --command gitleaks git --pre-commit --staged --redact --no-banner --verbose 2> /dev/null; nix shell nixpkgs#gitleaks --command gitleaks git --redact --no-banner --verbose 2> /dev/null'
+        language: system
+        pass_filenames: false
