@@ -1,4 +1,4 @@
-# LLM demo
+# 🤖 LLM demo
 
 <p align="left">
   <a href="https://github.com/pabroux/llm-demo/blob/master/LICENSE">
