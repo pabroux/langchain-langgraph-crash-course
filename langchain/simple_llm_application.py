@@ -54,8 +54,9 @@ prompt_template = ChatPromptTemplate.from_messages(
 # ↳ The input of the prompt template is dict
 prompt = prompt_template.invoke({"language":"Italian", "text":"hi!"})
 
-# ↳ As you can see, we get again a list of messages (i.e.
-#   SystemMessage and HumanMessage)
+# ↳ `prompt_template.invoke` returns a `ChatPromptValue` object. 
+#   By printing it, you can see it contains a list of messages 
+#   (e.g. `SystemMessage` and `HumanMessage` in our example)
 print(prompt)
 
 # ↳ If you want to access the messages directly, use the 
