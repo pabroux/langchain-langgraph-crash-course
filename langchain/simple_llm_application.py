@@ -15,7 +15,6 @@ os.environ["OPENAI_API_KEY"] = input("OpenAI API key: ")
 #   interface for interacting with them
 model = init_chat_model("gpt-4o-mini", model_provider="openai")
 
-
 # ↳ To simply call the model, you can pass in a list of messages
 #   to the `.invoke` method
 #   ↳ In addition to text content, message objects convey
@@ -33,7 +32,7 @@ messages = [
     HumanMessage("hi!"),
 ]
 
-#print(model.invoke(messages))
+print(model.invoke(messages))
 
 # ↳ Because chat models are Runnables, they expose a standard
 #   interface that includes async and streaming modes of
@@ -63,13 +62,16 @@ print(prompt)
 #   `to_messages` method
 print(prompt.to_messages())
 
-# ↳ Now invoke the chat model on the formatted prompt.
+# ↳ Now invoke the chat model on the formatted prompt
 output = model.invoke(prompt)
+print(output.content)
 
-# ↳ You can use the StrOutputParser to parse the output
-parser = StrOutputParser()
-print(parser.parse(output))
 
+# LCEL
 # ↳ All the previous steps can be chained together in a short way
+#   using the `|` operator. That form is called LCEL (LangChain 
+#   Expression Language) and is the recommended way. The previous
+#   steps use the legacy form
+parser = StrOutputParser() # just a parser for the output
 chain = prompt_template | model | parser
 print(chain.invoke({"language": "Italian", "text": "hi!"}))
