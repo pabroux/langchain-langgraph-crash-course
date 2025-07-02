@@ -3,6 +3,9 @@
 Just a tiny repository with some examples of LLM agents made with [LangGraph](https://github.com/langchain-ai/langgraph), [LangChain](https://github.com/langchain-ai/langchain) and [Tavily](http://tavily.com/).
 
 🚧 Work in progress
+
+All demo uses the OpenAI api with the 4o-mini model.
+
 sample_llm_application : explains how to use LLM with LangChain (PromptTemplate and ChatModels)
 
 
