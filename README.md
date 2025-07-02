@@ -1,4 +1,17 @@
-# LLM agent demo
+# LLM demo
+
+<p align="left">
+  <a href="https://github.com/pabroux/llm-demo/blob/master/LICENSE">
+    <picture>
+      <img src="https://img.shields.io/badge/License-MIT-green" alt="License Badge">
+    </picture>
+  </a>
+  <a href="https://github.com/pabroux/llm-demo/actions/workflows/ci.yml">
+    <picture>
+      <img src="https://github.com/pabroux/llm-demo/actions/workflows/ci.yml/badge.svg" alt="CI Tester Badge">
+    </picture>
+  </a>
+</p>
 
 Just a tiny repository with some examples of LLM agents made with [LangGraph](https://github.com/langchain-ai/langgraph), [LangChain](https://github.com/langchain-ai/langchain) and [Tavily](http://tavily.com/).
 
