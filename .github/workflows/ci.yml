@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+permissions:
+  contents: read
+jobs:
+  QA:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Check up-to-date syntax of Python files (pyupgrade)
+        run: nix shell nixpkgs#pyupgrade --command pyupgrade --py312-plus **/*.py
+      - name: Check format of Python files (ruff)
+        run: nix shell nixpkgs#ruff --command ruff format --check
+      - name: Check import order & lints of Python files (ruff)
+        run: nix shell nixpkgs#ruff --command ruff check --select I
+      - name: Scan secrets
+        run: nix shell nixpkgs#gitleaks --command gitleaks git --no-banner --verbose
