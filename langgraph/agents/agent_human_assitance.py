@@ -1,15 +1,14 @@
 import os
 from typing import Annotated
 
-from typing_extensions import TypedDict
-
-from langchain.chat_models import init_chat_model
 from langchain_core.messages import ToolMessage
 from langchain_core.tools import InjectedToolCallId, tool
 from langchain_tavily import TavilySearch
+from typing_extensions import TypedDict
 
+from langchain.chat_models import init_chat_model
 from langgraph.checkpoint.memory import MemorySaver
-from langgraph.graph import StateGraph, START
+from langgraph.graph import START, StateGraph
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
 from langgraph.types import Command, interrupt
@@ -21,8 +20,8 @@ llm = init_chat_model("openai:gpt-4o-mini")
 
 
 # Memory
-memory = MemorySaver() # Not to use in production. Use real DB instead
-config = {"configurable": {"thread_id": "1"}} # Use a fixed memory
+memory = MemorySaver()  # Not to use in production. Use real DB instead
+config = {"configurable": {"thread_id": "1"}}  # Use a fixed memory
 
 
 # Tools
@@ -62,6 +61,7 @@ def human_assistance(
     }
     # We return a Command object in the tool to update our state
     return Command(update=state_update)
+
 
 tool = TavilySearch(max_results=2)
 tools = [tool, human_assistance]

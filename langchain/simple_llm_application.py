@@ -1,16 +1,17 @@
-import os 
+import os
 
-from langchain.chat_models import init_chat_model
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
+
+from langchain.chat_models import init_chat_model
 
 os.environ["OPENAI_API_KEY"] = input("OpenAI API key: ")
 
 
 # Using LLM
-# ↳ LangChain supports many different language models that you 
-#   can use interchangeably. ChatModels are instances of 
+# ↳ LangChain supports many different language models that you
+#   can use interchangeably. ChatModels are instances of
 #   LangChain Runnables, which means they expose a standard
 #   interface for interacting with them
 model = init_chat_model("gpt-4o-mini", model_provider="openai")
@@ -20,7 +21,7 @@ model = init_chat_model("gpt-4o-mini", model_provider="openai")
 #   ↳ In addition to text content, message objects convey
 #     conversational roles and hold important data, such as tool
 #     calls and token usage counts
-#   ↳ LangChain supports chat model inputs via strings or 
+#   ↳ LangChain supports chat model inputs via strings or
 #     provider (e.g. OpenAi) format. The following are equivalent:
 #     ```python
 #     model.invoke("Hello")
@@ -39,7 +40,7 @@ print(model.invoke(messages))
 #   invocation. This allows us to stream individual tokens from
 #   a chat model
 for token in model.stream(messages):
-   print(token.content, end="|")
+    print(token.content, end="|")
 
 
 # Prompt template
@@ -52,14 +53,14 @@ prompt_template = ChatPromptTemplate.from_messages(
 )
 
 # ↳ The input of the prompt template is dict
-prompt = prompt_template.invoke({"language":"Italian", "text":"hi!"})
+prompt = prompt_template.invoke({"language": "Italian", "text": "hi!"})
 
-# ↳ `prompt_template.invoke` returns a `ChatPromptValue` object. 
-#   By printing it, you can see it contains a list of messages 
+# ↳ `prompt_template.invoke` returns a `ChatPromptValue` object.
+#   By printing it, you can see it contains a list of messages
 #   (e.g. `SystemMessage` and `HumanMessage` in our example)
 print(prompt)
 
-# ↳ If you want to access the messages directly, use the 
+# ↳ If you want to access the messages directly, use the
 #   `to_messages` method
 print(prompt.to_messages())
 
@@ -70,9 +71,9 @@ print(output.content)
 
 # LCEL
 # ↳ All the previous steps can be chained together in a short way
-#   using the `|` operator. That form is called LCEL (LangChain 
+#   using the `|` operator. That form is called LCEL (LangChain
 #   Expression Language) and is the recommended way. The previous
 #   steps use the legacy form
-parser = StrOutputParser() # just a parser for the output
+parser = StrOutputParser()  # just a parser for the output
 chain = prompt_template | model | parser
 print(chain.invoke({"language": "Italian", "text": "hi!"}))

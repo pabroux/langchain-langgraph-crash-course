@@ -1,13 +1,12 @@
 import os
 from typing import Annotated
 
+from langchain_tavily import TavilySearch
 from typing_extensions import TypedDict
 
 from langchain.chat_models import init_chat_model
-from langchain_tavily import TavilySearch
-
 from langgraph.checkpoint.memory import MemorySaver
-from langgraph.graph import StateGraph, START
+from langgraph.graph import START, StateGraph
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
 
@@ -18,15 +17,15 @@ llm = init_chat_model("openai:gpt-4o-mini")
 
 
 # Memory
-memory = MemorySaver() # Not to use in production. Use real DB instead
-config = {"configurable": {"thread_id": "1"}} # Use a fixed memory
+memory = MemorySaver()  # Not to use in production. Use real DB instead
+config = {"configurable": {"thread_id": "1"}}  # Use a fixed memory
 
 
 # Tools
 tool = TavilySearch(max_results=2)
 tools = [tool]
 # ↳ Tell the LLM which tools it can call
-llm_with_tools = llm.bind_tools(tools) 
+llm_with_tools = llm.bind_tools(tools)
 
 
 # State
@@ -68,11 +67,12 @@ graph = graph_builder.compile(checkpointer=memory)
 # Stream
 def stream_graph_updates(user_input: str):
     for event in graph.stream(
-            {"messages": [{"role": "user", "content": user_input}]},
-            config,
-            ):
+        {"messages": [{"role": "user", "content": user_input}]},
+        config,
+    ):
         for value in event.values():
             print("Assistant:", value["messages"][-1].content)
+
 
 while True:
     try:
