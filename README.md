@@ -17,7 +17,7 @@ Just a tiny repository with some examples of LLM agents made with [LangGraph](ht
 
 🚧 Work in progress
 
-All demo uses the OpenAI api with the 4o-mini model.
+All demo uses the OpenAI api with the 4o-mini model. You can use the free tier.
 
 sample_llm_application : explains how to use LLM with LangChain (PromptTemplate and ChatModels)
 
