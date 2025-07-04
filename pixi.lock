@@ -63,7 +63,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/88/ef/eb23f262cca3c0c4eb7ab1933c3b1f03d021f2c48f54763065b6f0e321be/packaging-24.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/cc/20/ff623b09d963f88bfde16306a54e12ee5ea43e9b597108672ff3a408aad6/pathspec-0.12.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8c/96/ef98f91bbb42b79e9bb82bdd348b255eb9d65f14dbbe3b1594644c4073f7/propcache-0.3.2-cp313-cp313-macosx_11_0_arm64.whl
-      - pypi: https://files.pythonhosted.org/packages/b5/69/831ed22b38ff9b4b64b66569f0e5b7b97cf3638346eb95a2147fdb49ad5f/pydantic-2.11.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/6a/c0/ec2b1c8712ca690e5d61979dee872603e92b8a32f94cc1b72d53beab008a/pydantic-2.11.7-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3a/cc/5999d1eb705a6cefc31f0b4a90e9f7fc400539b1a1030529700cc1b51838/pydantic_core-2.33.2-cp313-cp313-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/58/f0/427018098906416f580e3cf1366d3b1abfb408a0652e9f31600c24a1903c/pydantic_settings-2.10.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/73/9f/78d096ef795a813fa0e1cb9b33fa574b205f2b563d9c1e9366c854cf0364/pypdf-5.7.0-py3-none-any.whl
@@ -636,10 +636,10 @@ packages:
   version: 0.3.2
   sha256: 7f08f1cc28bd2eade7a8a3d2954ccc673bb02062e3e7da09bc75d843386b342f
   requires_python: '>=3.9'
-- pypi: https://files.pythonhosted.org/packages/b5/69/831ed22b38ff9b4b64b66569f0e5b7b97cf3638346eb95a2147fdb49ad5f/pydantic-2.11.5-py3-none-any.whl
+- pypi: https://files.pythonhosted.org/packages/6a/c0/ec2b1c8712ca690e5d61979dee872603e92b8a32f94cc1b72d53beab008a/pydantic-2.11.7-py3-none-any.whl
   name: pydantic
-  version: 2.11.5
-  sha256: f9c26ba06f9747749ca1e5c94d6a85cb84254577553c8785576fd38fa64dc0f7
+  version: 2.11.7
+  sha256: dde5df002701f6de26248661f6835bbe296a47bf73990135c7d07ce741b9623b
   requires_dist:
   - annotated-types>=0.6.0
   - pydantic-core==2.33.2
