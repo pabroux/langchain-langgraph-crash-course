@@ -10,12 +10,16 @@ os.environ["OPENAI_API_KEY"] = input("OpenAI API key: ")
 
 llm = init_chat_model("gpt-4o-mini", model_provider="openai")
 
+
 # Tagging
 # ↳ Tagging has a few components:
-#    - `function`: Tagging relies on function call mode of
-#      supported LLMs to specify how to tag a document. The
-#      function signature (based on the shema) is sent to the LLM
-#      which then returns structured output accordingly;
+#    - `function`: Tagging relies on function call mode (also called
+#      tool calling) of supported LLMs to specify how to tag a
+#      document. The function signature (based on the shema) is sent
+#      to the LLM which then returns structured output accordingly;
+#      ↳ JSON mode is also supported for LLMs that support it and is
+#        used as a fallback if the LLM doesn't support function call
+#        mode. You can even explicitly use JSON mode if you want to
 #    - `schema`: defines the structure and fields you want to extract
 tagging_prompt = ChatPromptTemplate.from_template(
     """
@@ -45,6 +49,13 @@ structured_llm = llm.with_structured_output(Classification)
 ipt = "Estoy increiblemente contento de haberte conocido! Creo que seremos muy buenos amigos!"
 prompt = tagging_prompt.invoke({"input": ipt})
 response = structured_llm.invoke(prompt)
+
+print(response)
+
+# ↳ The previous instructions could be rewritten using the LCEL
+#   (LangChain Expression Language)
+chain = tagging_prompt | structured_llm
+response = chain.invoke({"input": ipt})
 
 print(response)
 
@@ -80,5 +91,12 @@ class Classification(BaseModel):
 structured_llm = llm.with_structured_output(Classification)
 prompt = tagging_prompt.invoke({"input": ipt})
 response = structured_llm.invoke(prompt)
+
+print(response)
+
+# ↳ The previous instructions could be rewritten using the LCEL
+#   (LangChain Expression Language)
+chain = tagging_prompt | structured_llm
+response = chain.invoke({"input": ipt})
 
 print(response)
