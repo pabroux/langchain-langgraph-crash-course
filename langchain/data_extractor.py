@@ -164,6 +164,13 @@ message_no_extraction = {
 }
 
 structured_llm = llm.with_structured_output(schema=Data)
+
+#   ↳ Without the few-shot examples, the model will fail
+result = structured_llm.invoke([message_no_extraction])
+
+print(result)
+
+#   ↳ With the few-shot examples, the model will succeed
 result = structured_llm.invoke(messages + [message_no_extraction])
 
 print(result)
