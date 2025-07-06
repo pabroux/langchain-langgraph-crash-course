@@ -13,7 +13,7 @@ llm = init_chat_model("gpt-4o-mini", model_provider="openai")
 
 
 # Extract data from text
-# ↳ In langChain, extracting relies on function call mode (also called
+# ↳ In LangChain, extracting relies on function call mode (also called
 #   tool calling) of supported LLM
 #   ↳ JSON mode is also supported for LLMs that support it and is used
 #     as a fallback if the LLM doesn't support function call mode. You
@@ -125,13 +125,13 @@ response = llm.invoke(messages)
 print(response.content)
 
 # ↳ Since different chat model providers impose different requirements
-#   for valid message sequences, langChain includes a utility function
+#   for valid message sequences, LangChain includes a utility function
 #   `tool_example_to_messages` that will generate a valid sequence for
 #   most model providers. It simplifies the generation of structured
 #   few-shot examples by just requiring Pydantic representations of the
 #   corresponding tool calls. You can convert pairs of input strings
 #   and desired Pydantic objects to a sequence of messages that can be
-#   provided to a chat model. Under the hood, langChain will format the
+#   provided to a chat model. Under the hood, LangChain will format the
 #   tool calls to each provider's required format
 examples = [
     (
