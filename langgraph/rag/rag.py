@@ -85,7 +85,7 @@ def generate(state: State):
     return {"answer": response.content}
 
 
-# Compile application
+# Build the graph
 graph_builder = StateGraph(State)
 
 # ↳ `add_sequence` adds a list of nodes to the graph that
