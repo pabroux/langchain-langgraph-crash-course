@@ -1,9 +1,14 @@
-# 🐦‍⬛🔗 LangChain LangGraph Course
+# 🦜🔗 LangChain LangGraph Crash Course
 
 <p align="left">
   <a href="https://github.com/pabroux/llm-demo/blob/master/LICENSE">
     <picture>
       <img src="https://img.shields.io/badge/License-MIT-green" alt="License Badge">
+    </picture>
+  </a>
+  <a href="https://pixi.sh">
+    <picture>
+      <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/prefix-dev/pixi/main/assets/badge/v0.json" alt="pixi Badge">
     </picture>
   </a>
   <a href="https://github.com/pabroux/llm-demo/actions/workflows/ci.yml">
@@ -13,15 +18,67 @@
   </a>
 </p>
 
-Just a tiny repository with some examples of LLM agents made with [LangGraph](https://github.com/langchain-ai/langgraph), [LangChain](https://github.com/langchain-ai/langchain) and [Tavily](http://tavily.com/).
+LangChain LangGraph Crash Course (LLCC) is a hands-on course designed to teach you [LangChain](https://github.com/langchain-ai/langchain) and [LangGraph](https://github.com/langchain-ai/langgraph) from the ground up. In this course, you will learn how to build Retrieval-Augmented Generation (RAG) workflows, intelligent agents doing web searches, text classifiers, and much more.
 
-🚧 Work in progress
+> [!NOTE] 
+> Unlike official tutorials, LLCC provides pure Python scripts instead of Jupyter or Colab notebooks, delivering clean, ready-to-run code. Each script is extensively commented for complete clarity and ease of understanding. Additionally, LLCC sometimes includes extra steps not found in official tutorials, such as LCEL.
 
-All demo uses the OpenAI api with the 4o-mini model. You can use the free tier.
+## Table of contents
 
-sample_llm_application : explains how to use LLM with LangChain (PromptTemplate and ChatModels)
+- [Requirements](#requirements)
+- [Install](#install)
+- [Cost](#cost)
+- [Course](#course)
+- [Resources](#resources)
 
+## Requirements
 
+If you want to run the examples, you will need:
+
+- [Python](https://www.python.org/downloads/)
+- [Pixi](https://pixi.sh)
+
+## Install 
+
+Inside the repository, install the dependencies as follows:
+```shell
+pixi install -a
+```
+
+## Cost
+
+All examples utilize the OpenAI API, specifically employing the `gpt-4o-mini` model as the language model and/or the `text-embedding-3-large` model for embeddings. You can access these services under the free tier, which typically incurs no cost.
+
+## Course
+
+> [!TIP]
+> It's recommended to follow the course in the given order.
+
+### 1. LangChain
+
+| Task | Description |
+|------|-------------|
+| Chat models & prompts | Simple LLM application with prompt templates and chat models |
+| Semantic search | Search over a PDF with document loaders, embedding models and vector stores |
+| Classification | Classify text into tags using chat models with structured outputs |
+| Extraction | Extract structured data from text using chat models and few-shot examples |
+
+### 2. LangGraph
+
+#### 2.1 Agents
+
+| Task | Description |
+|------|-------------|
+| Agent | Simple agent with a memory and able to do web searches |
+| Agent & human in the loop | Agent empowered to request a human intervention |
+| Agent & time travel | Altering an agent output by changing its memory  |
+
+#### 2.2 Retrieval augmented generation (RAG)
+
+| Task | Description |
+|------|-------------|
+| RAG | Simple RAG with an introduction to self-query (an advanced RAG technique) |
+| RAG & conversations | Delegating (multi-step) RAG calls to a chatbot |
 
 ## Resources
 
@@ -37,9 +94,9 @@ The resources described here are sorted in order of importance. For instance, to
 
 ### LangChain
 
-- [LangChain tutorial](https://python.langchain.com/docs/tutorials/)
+- [LangChain tutorials](https://python.langchain.com/docs/tutorials/)
 - [LangChain expression language (LCEL)](https://python.langchain.com/docs/versions/migrating_chains/llm_chain/#legacy)
 
 ### LangGraph
 
-- [LangGraph tutorial](https://langchain-ai.github.io/langgraph/concepts/why-langgraph/)
+- [LangGraph tutorials](https://langchain-ai.github.io/langgraph/concepts/why-langgraph/)
