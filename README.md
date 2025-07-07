@@ -33,10 +33,12 @@ LangChain LangGraph Crash Course (LLCC) is a hands-on course designed to teach y
 
 ## Requirements
 
-If you want to run the examples, you will need:
+If you want to run the examples, you will need to install the following:
 
 - [Python](https://www.python.org/downloads/)
 - [Pixi](https://pixi.sh)
+
+You'll also need to have an [OpenAI key](https://platform.openai.com/settings/organization/api-keys).
 
 ## Install 
 
@@ -56,29 +58,29 @@ All examples utilize the OpenAI API, specifically employing the `gpt-4o-mini` mo
 
 ### 1. LangChain
 
-| Task | Description |
-|------|-------------|
-| Chat models & prompts | Simple LLM application with prompt templates and chat models |
-| Semantic search | Search over a PDF with document loaders, embedding models and vector stores |
-| Classification | Classify text into tags using chat models with structured outputs |
-| Extraction | Extract structured data from text using chat models and few-shot examples |
+| Task | Description | File |
+|------|-------------|------|
+| Chat models & prompts | Simple LLM application with prompt templates and chat models | [simple_llm_application.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langchain/simple_llm_application.py) |
+| Semantic search | Search over a PDF with document loaders, embedding models and vector stores | [semantic_search_engine.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langchain/semantic_search_engine.py) |
+| Classification | Classify text into tags using chat models with structured outputs | [text_classifier.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langchain/text_classifier.py) |
+| Extraction | Extract structured data from text using chat models and few-shot examples | [data_extractor.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langchain/data_extractor.py) |
 
 ### 2. LangGraph
 
 #### 2.1 Agents
 
-| Task | Description |
-|------|-------------|
-| Agent | Simple agent with a memory and able to do web searches |
-| Agent & human in the loop | Agent empowered to request a human intervention |
-| Agent & time travel | Altering an agent output by changing its memory  |
+| Task | Description | File |
+|------|-------------|------|
+| Agent | Simple agent with a memory and able to do web searches | [agent.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/agents/agent.py) |
+| Agent & human in the loop | Agent empowered to request a human intervention | [agent_human_assitance.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/agents/agent_human_assitance.py) | 
+| Agent & time travel | Altering an agent output by changing its memory | [agent_time_travel.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/agents/agent_time_travel.py) |
 
 #### 2.2 Retrieval augmented generation (RAG)
 
-| Task | Description |
-|------|-------------|
-| RAG | Simple RAG with an introduction to self-query (an advanced RAG technique) |
-| RAG & conversations | Delegating (multi-step) RAG calls to a chatbot |
+| Task | Description | File |
+|------|-------------|------|
+| RAG | Simple RAG with an introduction to self-query (an advanced RAG technique) | [rag.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/rag/rag.py) | 
+| RAG & conversations | Delegating (multi-step) RAG calls to a LLM | [rag_delegation.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/rag/rag_delegation.py) |
 
 ## Resources
 
