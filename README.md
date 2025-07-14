@@ -8,12 +8,12 @@
   </a>
   <a href="https://pixi.sh">
     <picture>
-      <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/prefix-dev/pixi/main/assets/badge/v0.json" alt="pixi Badge">
+      <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/prefix-dev/pixi/main/assets/badge/v0.json" alt="Pixi Badge">
     </picture>
   </a>
   <a href="https://github.com/pabroux/llm-demo/actions/workflows/ci.yml">
     <picture>
-      <img src="https://github.com/pabroux/llm-demo/actions/workflows/ci.yml/badge.svg" alt="CI Tester Badge">
+      <img src="https://github.com/pabroux/llm-demo/actions/workflows/ci.yml/badge.svg" alt="CI Badge">
     </picture>
   </a>
 </p>
