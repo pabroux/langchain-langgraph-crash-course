@@ -1,7 +1,7 @@
 # 🦜🔗 LangChain LangGraph Crash Course
 
 <p align="left">
-  <a href="https://github.com/pabroux/llm-demo/blob/master/LICENSE">
+  <a href="https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/LICENSE">
     <picture>
       <img src="https://img.shields.io/badge/License-MIT-green" alt="License Badge">
     </picture>
@@ -11,9 +11,9 @@
       <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/prefix-dev/pixi/main/assets/badge/v0.json" alt="Pixi Badge">
     </picture>
   </a>
-  <a href="https://github.com/pabroux/llm-demo/actions/workflows/ci.yml">
+  <a href="https://github.com/pabroux/langchain-langgraph-crash-course/actions/workflows/ci.yml">
     <picture>
-      <img src="https://github.com/pabroux/llm-demo/actions/workflows/ci.yml/badge.svg" alt="CI Badge">
+      <img src="https://github.com/pabroux/langchain-langgraph-crash-course/actions/workflows/ci.yml/badge.svg" alt="CI Badge">
     </picture>
   </a>
 </p>
