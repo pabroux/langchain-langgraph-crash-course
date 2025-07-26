@@ -57,6 +57,8 @@ All examples utilize the OpenAI API, specifically employing the `gpt-4o-mini` mo
 
 ### 1. LangChain
 
+Familiarize yourself with LangChain components by building simple applications.
+
 | Task | Description | File |
 |------|-------------|------|
 | Chat models & prompts | Simple LLM application with prompt templates and chat models | [simple_llm_application.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langchain/simple_llm_application.py) |
@@ -65,6 +67,8 @@ All examples utilize the OpenAI API, specifically employing the `gpt-4o-mini` mo
 | Extraction | Extract structured data from text using chat models and few-shot examples | [data_extractor.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langchain/data_extractor.py) |
 
 ### 2. LangGraph
+
+Use LangGraph to assemble and orchestrate LangChain components into full-featured applications.
 
 #### 2.1 Agents
 
