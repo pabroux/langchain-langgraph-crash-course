@@ -80,6 +80,9 @@ Use LangGraph to assemble and orchestrate LangChain components into full-feature
 
 #### 2.2 Retrieval augmented generation (RAG)
 
+> [!NOTE] 
+> LangGraph is not required to build a RAG application. You can implement one through invocations of only LangChain components.
+
 | Task | Description | File |
 |------|-------------|------|
 | RAG | Simple RAG with an introduction to self-query (an advanced RAG technique) | [rag.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/rag/rag.py) | 
