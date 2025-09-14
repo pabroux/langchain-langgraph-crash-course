@@ -20,8 +20,8 @@ llm = init_chat_model("openai:gpt-4o-mini")
 
 
 # Memory
-memory = MemorySaver()  # Not to use in production. Use real DB instead
-config = {"configurable": {"thread_id": "1"}}  # Use a fixed memory
+memory = MemorySaver()  # not to use in production, use a real DB instead
+config = {"configurable": {"thread_id": "1"}}  # use a fixed memory thread
 
 
 # Tools
