@@ -15,7 +15,7 @@ llm = init_chat_model("gpt-4o-mini", model_provider="openai")
 # ↳ Tagging has a few components:
 #    - `function`: Tagging relies on function call mode (also called
 #      tool calling) of supported LLMs to specify how to tag a
-#      document. The function signature (based on the shema) is sent
+#      document. The function signature (based on the `schema`) is sent
 #      to the LLM which then returns structured output accordingly;
 #      ↳ JSON mode is also supported for LLMs that support it and is
 #        used as a fallback if the LLM doesn't support function call
