@@ -1,7 +1,7 @@
 import os
 from typing import List
 
-import bs4
+import bs4 # BeautifulSoup to parse HTML
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_core.documents import Document
 from langchain_core.messages import SystemMessage
@@ -24,10 +24,11 @@ embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
 
 
 # Memory
+# ↳ It lets you save and resume complex state at any time
 memory = MemorySaver()
 graph = graph_builder.compile(checkpointer=memory)
 
-# ↳ Specify an ID for the thread
+# ↳ Specify a memory thread
 config = {"configurable": {"thread_id": "vForVendetta501"}}
 
 
@@ -55,7 +56,7 @@ graph_builder = StateGraph(MessagesState)
 
 
 # Turn the retrieve step into a tool call option for the LLM
-@tool(response_format="content_and_artifact")
+@tool(response_format="content_and_artifact") # make the model see only the first output
 def retrieve(query: str):
     """Retrieve information related to a query."""
     retrieved_docs = vector_store.similarity_search(query, k=2)
