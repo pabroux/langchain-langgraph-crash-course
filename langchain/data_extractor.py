@@ -50,7 +50,7 @@ class Person(BaseModel):
 # ↳ Create a prompt to provide instructions and any additional context
 #   ↳ Note that you can:
 #      1. Add examples into the prompt template to improve extraction
-#         quality (see the few-shot section);
+#         quality (see the few-shot section below);
 #      2. Introduce additional parameters to take context into account
 #         (e.g. include metadata about the document from which the text
 #         was extracted)
@@ -87,7 +87,7 @@ print(result)
 # Multiple entities
 # ↳ In most cases, you should be extracting a list of entities
 #   rather than a single entity. This can be easily achieved using
-#   pydantic by nesting models inside one another
+#   Pydantic by nesting models inside one another
 #   ↳ Note that when the schema accommodates the extraction of multiple
 #     entities, it also allows the model to extract no entities if
 #     no relevant information is in the text by providing an empty
