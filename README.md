@@ -74,7 +74,7 @@ Use LangGraph to assemble and orchestrate LangChain components into full-feature
 | Task | Description | File |
 |------|-------------|------|
 | RAG | Simple RAG with an introduction to self-query (an advanced RAG technique) | [rag.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/rag/rag.py) | 
-| RAG & conversations | Delegating (multi-step) RAG calls to a LLM | [rag_delegation.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/rag/rag_delegation.py) |
+| RAG & conversations | Delegating (multi-step) RAG calls to a LLM and a ReAct introduction | [rag_delegation.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/rag/rag_delegation.py) |
 
 ## Resources
 
