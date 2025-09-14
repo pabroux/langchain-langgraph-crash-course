@@ -112,7 +112,7 @@ print(results[0])
 #   operations). Although we can construct retrievers from vector stores,
 #   retrievers can interface with non-vector store sources of data, as
 #   well (such as external APIs)
-# ↳ You can create a simple version of this yourselves, without subclassing
+# ↳ You can create a simple version of this yourself, without subclassing
 #   `Retriever`. If you choose what method you wish to use to retrieve
 #   documents, you can create a runnable easily. Here is an example:
 @chain
