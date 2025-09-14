@@ -26,9 +26,9 @@ config = {"configurable": {"thread_id": "1"}}  # use a fixed memory thread
 
 # Tools
 @tool
-# ↳ Note that because we are generating a ToolMessage for a state update, we
+# ↳ Note that because we are generating a `ToolMessage` for a state update, we
 #   generally require the ID of the corresponding tool call. We can use
-#   LangChain's InjectedToolCallId to signal that this argument should not
+#   LangChain's `InjectedToolCallId` to signal that this argument should not
 #   be revealed to the model in the tool's schema
 def human_assistance(
     name: str, birthday: str, tool_call_id: Annotated[str, InjectedToolCallId]
@@ -52,14 +52,14 @@ def human_assistance(
         verified_birthday = human_response.get("birthday", birthday)
         response = f"Made a correction: {human_response}"
 
-    # This time we explicitly update the state with a ToolMessage inside
+    # This time we explicitly update the state with a `ToolMessage` inside
     # the tool
     state_update = {
         "name": verified_name,
         "birthday": verified_birthday,
         "messages": [ToolMessage(response, tool_call_id=tool_call_id)],
     }
-    # We return a Command object in the tool to update our state
+    # We return a `Command` object in the tool to update our state
     return Command(update=state_update)
 
 
@@ -80,7 +80,7 @@ def chatbot(state: State):
     message = llm_with_tools.invoke(state["messages"])
     # Because we will be interrupting during tool execution,
     # we disable parallel tool calling to avoid repeating any
-    # tool invocations when we resume.
+    # tool invocations when we resume
     assert len(message.tool_calls) <= 1
     return {"messages": [message]}
 
@@ -88,9 +88,8 @@ def chatbot(state: State):
 # Graph
 graph_builder = StateGraph(State)
 
-# ↳ The first argument is the unique node name
-#   The second argument is the function or object that will be called whenever
-#   the node is used
+# ↳ The first argument is the unique node name. The second argument is the function or object that
+#   will be called whenever the node is used
 graph_builder.add_node("chatbot", chatbot)
 tool_node = ToolNode(tools=tools)
 graph_builder.add_node("tools", tool_node)
@@ -131,6 +130,8 @@ print("Snapshot next node →", snapshot.next)
 
 
 # Stream (resume) by passing a human interaction
+# ↳ `Command` contains data expected by the `interrupt` function from
+#   `human_assistance` tool
 human_command = Command(
     resume={
         "name": "LangGraph",
