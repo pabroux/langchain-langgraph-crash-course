@@ -17,8 +17,9 @@ llm = init_chat_model("openai:gpt-4o-mini")
 
 
 # Memory
-memory = MemorySaver()  # Not to use in production. Use real DB instead
-config = {"configurable": {"thread_id": "1"}}  # Use a fixed memory
+# ↳ It lets you save and resume complex state (see below) at any time
+memory = MemorySaver()  # not to use in production, use real DB instead
+config = {"configurable": {"thread_id": "1"}}  # use a fixed memory/thread
 
 
 # Tools
@@ -44,9 +45,8 @@ def chatbot(state: State):
 # Graph
 graph_builder = StateGraph(State)
 
-# ↳ The first argument is the unique node name
-#   The second argument is the function or object that will be called whenever
-#   the node is used
+# ↳ The first argument is the unique node name. The second argument is the function or object that
+#   will be called whenever the node is used
 graph_builder.add_node("chatbot", chatbot)
 tool_node = ToolNode(tools=tools)
 graph_builder.add_node("tools", tool_node)
