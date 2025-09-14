@@ -20,7 +20,7 @@ llm = init_chat_model("openai:gpt-4o-mini")
 
 
 # Memory
-# ↳ It lets you save and resume complex state (see below) at any time
+# ↳ It lets you save and resume complex state at any time
 memory = MemorySaver()  # not to use in production, use a real DB instead
 config = {"configurable": {"thread_id": "1"}}  # use a fixed memory thread
 
