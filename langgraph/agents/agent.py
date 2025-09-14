@@ -19,7 +19,7 @@ llm = init_chat_model("openai:gpt-4o-mini")
 # Memory
 # ↳ It lets you save and resume complex state (see below) at any time
 memory = MemorySaver()  # not to use in production, use real DB instead
-config = {"configurable": {"thread_id": "1"}}  # use a fixed memory/thread
+config = {"configurable": {"thread_id": "1"}}  # use a fixed memory thread
 
 
 # Tools
@@ -68,7 +68,7 @@ graph = graph_builder.compile(checkpointer=memory)
 def stream_graph_updates(user_input: str):
     for event in graph.stream(
         {"messages": [{"role": "user", "content": user_input}]},
-        config,
+        config, # setup the memory thread to use
     ):
         for value in event.values():
             print("Assistant:", value["messages"][-1].content)
@@ -82,7 +82,7 @@ while True:
             break
         stream_graph_updates(user_input)
     except:
-        # fallback if input() is not available
+        # Fallback if input() is not available
         user_input = "What do you know about LangGraph?"
         print("User: " + user_input)
         stream_graph_updates(user_input)
