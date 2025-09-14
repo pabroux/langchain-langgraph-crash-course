@@ -66,7 +66,7 @@ Use LangGraph to assemble and orchestrate LangChain components into full-feature
 | Task | Description | File |
 |------|-------------|------|
 | Agent | Simple agent with a memory and able to do web searches | [agent.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/agents/agent.py) |
-| Agent & human in the loop | Agent empowered to request a human intervention | [agent_human_assitance.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/agents/agent_human_assitance.py) | 
+| Agent & human in the loop | Agent empowered to request a human intervention | [agent_human_assistance.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/agents/agent_human_assistance.py) | 
 | Agent & time travel | Altering an agent output by changing its memory | [agent_time_travel.py](https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/langgraph/agents/agent_time_travel.py) |
 
 #### 2.2 Retrieval augmented generation (RAG)
