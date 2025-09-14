@@ -1,7 +1,7 @@
 import os
 from typing import Annotated, List, Literal
 
-import bs4  # BeauifulSoup to parse HTML
+import bs4  # BeautifulSoup to parse HTML
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_core.documents import Document
 from langchain_core.vectorstores import InMemoryVectorStore
@@ -56,7 +56,7 @@ prompt = hub.pull("rlm/rag-prompt")
 
 # Define the state for the application
 # ↳ The state is typically a Python `TypedDict` but can also
-#   be a `pydantic` model
+#   be a Pydantic model
 class State(TypedDict):
     question: str
     context: list[Document]
