@@ -45,7 +45,7 @@ docs = loader.load()  # Returns a list of `Document`, one per page
 
 # Chunking documents
 # ↳ For both information retrieval and downstream question-answering
-#   purposes, a page may be too coarse a representation. Chunking
+#   purposes, a page may be too coarse as a representation. Chunking
 #   helps ensure that the meanings of relevant portions of the
 #   document are not "washed out" by surrounding text
 text_splitter = RecursiveCharacterTextSplitter(
