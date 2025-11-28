@@ -1,14 +1,13 @@
 import os
 from typing import Annotated
 
-from langchain_tavily import TavilySearch
-from typing_extensions import TypedDict
-
 from langchain.chat_models import init_chat_model
+from langchain_tavily import TavilySearch
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import START, StateGraph
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
+from typing_extensions import TypedDict
 
 os.environ["OPENAI_API_KEY"] = input("OpenAI API key: ")
 os.environ["TAVILY_API_KEY"] = input("Tavily API key: ")

@@ -1,20 +1,20 @@
 import os
 from typing import List
 
-import bs4 # BeautifulSoup to parse HTML
+import bs4  # BeautifulSoup to parse HTML
+from langchain.chat_models import init_chat_model
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_core.documents import Document
 from langchain_core.messages import SystemMessage
 from langchain_core.tools import tool
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from typing_extensions import TypedDict
-
-from langchain import hub
-from langchain.chat_models import init_chat_model
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, MessagesState, StateGraph
 from langgraph.prebuilt import ToolNode, create_react_agent, tools_condition
+from typing_extensions import TypedDict
+
+from langchain import hub
 
 os.environ["OPENAI_API_KEY"] = input("OpenAI API key: ")
 
@@ -56,7 +56,9 @@ graph_builder = StateGraph(MessagesState)
 
 
 # Turn the retrieve step into a tool call option for the LLM
-@tool(response_format="content_and_artifact") # make the model see only the first output
+@tool(
+    response_format="content_and_artifact"
+)  # make the model see only the first output
 def retrieve(query: str):
     """Retrieve information related to a query."""
     retrieved_docs = vector_store.similarity_search(query, k=2)

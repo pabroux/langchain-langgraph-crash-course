@@ -1,11 +1,10 @@
 import os
 from typing import List, Optional
 
+from langchain.chat_models import init_chat_model
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.utils.function_calling import tool_example_to_messages
 from pydantic import BaseModel, Field
-
-from langchain.chat_models import init_chat_model
 
 os.environ["OPENAI_API_KEY"] = input("OpenAI API key: ")
 

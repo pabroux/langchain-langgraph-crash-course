@@ -2,11 +2,13 @@ import os
 from typing import Annotated, List, Literal
 
 import bs4  # BeautifulSoup to parse HTML
+from langchain.chat_models import init_chat_model
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_core.documents import Document
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langgraph.graph import START, StateGraph
 from typing_extensions import TypedDict
 
 # LangChain Hub is a centralized platform for uploading,
@@ -14,8 +16,6 @@ from typing_extensions import TypedDict
 # discover and share polished prompt templates for various large
 # language models (LLMs)
 from langchain import hub
-from langchain.chat_models import init_chat_model
-from langgraph.graph import START, StateGraph
 
 os.environ["OPENAI_API_KEY"] = input("OpenAI API key: ")
 
