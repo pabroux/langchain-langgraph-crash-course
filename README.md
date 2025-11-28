@@ -12,6 +12,9 @@ LangChain LangGraph Crash Course (LLCC) is a hands-on course designed to teach y
 > [!NOTE] 
 > Unlike official tutorials, LLCC provides pure Python scripts instead of Jupyter or Colab notebooks, delivering clean, ready-to-run code. Each script is extensively commented for complete clarity and ease of understanding. Additionally, LLCC sometimes includes extra steps not found in official tutorials, such as LCEL.
 
+> [!WARNING]
+> Even if this course relies on a LangChain version prior to 1.0.0, the logic stays the same. You just need little adjustments. See the [migration guide](https://docs.langchain.com/oss/javascript/migrate/langchain-v1) to learn more.
+
 ## Table of contents
 
 - [Requirements](#requirements)
