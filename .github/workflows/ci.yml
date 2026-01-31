@@ -12,16 +12,18 @@ permissions:
 jobs:
   QA:
     runs-on: ubuntu-latest
+    env:
+      NIXPKGS: github:NixOS/nixpkgs/nixos-25.11
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@main
+        uses: DeterminateSystems/determinate-nix-action@v3.15.2
       - name: Check up-to-date syntax of Python files (pyupgrade)
-        run: nix shell nixpkgs#pyupgrade --command pyupgrade --py312-plus **/*.py
+        run: nix shell ${{ env.NIXPKGS }}#pyupgrade --command pyupgrade --py312-plus **/*.py
       - name: Check format of Python files (ruff)
-        run: nix shell nixpkgs#ruff --command ruff format --check
+        run: nix shell ${{ env.NIXPKGS }}#ruff --command ruff format --check
       - name: Check import order & lints of Python files (ruff)
-        run: nix shell nixpkgs#ruff --command ruff check --select I
+        run: nix shell ${{ env.NIXPKGS }}#ruff --command ruff check --select I
       - name: Scan secrets
-        run: nix shell nixpkgs#gitleaks --command gitleaks git --no-banner --verbose
+        run: nix shell ${{ env.NIXPKGS }}#gitleaks --command gitleaks git --no-banner --verbose
