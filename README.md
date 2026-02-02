@@ -18,7 +18,7 @@ LangChain LangGraph Crash Course (LLCC) is a hands-on course designed to teach y
 ## Table of contents
 
 - [Requirements](#requirements)
-- [Install](#install)
+- [Installation](#installation)
 - [Cost](#cost)
 - [Course](#course)
 - [Resources](#resources)
@@ -31,7 +31,7 @@ If you want to run the examples, you will need to install the following:
 
 You'll also need to have an [OpenAI key](https://platform.openai.com/settings/organization/api-keys).
 
-## Install 
+## Installation
 
 Inside the repository, install the dependencies as follows:
 ```shell
