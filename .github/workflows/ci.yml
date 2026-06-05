@@ -1,4 +1,4 @@
-name: CI
+name: ci
 on:
   push:
     branches: ["master"]
@@ -12,7 +12,7 @@ permissions:
 env:
   NIXPKGS: github:NixOS/nixpkgs/nixos-25.11
 jobs:
-  QA:
+  qa:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
