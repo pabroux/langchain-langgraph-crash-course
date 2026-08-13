@@ -1,10 +1,10 @@
 # 🦜🔗 LangChain LangGraph Crash Course
 
 <p align="left">
-  <a href="https://pre-commit.com"><img src="https://img.shields.io/badge/pre--commit-enabled-green?logo=pre-commit" alt="pre-commit Badge"></a>
-  <a href="https://pixi.sh"><img src="https://img.shields.io/badge/pixi-enabled-green" alt="Pixi Badge"></a>
-  <a href="https://github.com/pabroux/langchain-langgraph-crash-course/blob/master/LICENSE"><img src="https://img.shields.io/github/license/pabroux/langchain-langgraph-crash-course.svg" alt="License Badge"></a>
   <a href="https://github.com/pabroux/langchain-langgraph-crash-course/actions/workflows/ci.yml"><img src="https://github.com/pabroux/langchain-langgraph-crash-course/actions/workflows/ci.yml/badge.svg" alt="CI Badge"></a>
+  <a href="https://github.com/pabroux/langchain-langgraph-crash-course/blob/main/LICENSE"><img src="https://img.shields.io/github/license/pabroux/langchain-langgraph-crash-course.svg" alt="License Badge"></a>
+  <a href="https://pixi.sh"><img src="https://img.shields.io/badge/pixi-enabled-green" alt="Pixi Badge"></a>
+  <a href="https://pre-commit.com"><img src="https://img.shields.io/badge/pre--commit-enabled-green?logo=pre-commit" alt="pre-commit Badge"></a>
 </p>
 
 LangChain LangGraph Crash Course (LLCC) is a hands-on course designed to teach you [LangChain](https://github.com/langchain-ai/langchain) and [LangGraph](https://github.com/langchain-ai/langgraph) from the ground up. In this course, you will learn how to build Retrieval-Augmented Generation (RAG) workflows, intelligent agents doing web searches, text classifiers, and much more.
