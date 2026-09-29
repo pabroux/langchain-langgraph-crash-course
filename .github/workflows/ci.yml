@@ -12,7 +12,7 @@ permissions:
 env:
   NIXPKGS: github:NixOS/nixpkgs/nixos-25.11
 jobs:
-  qa:
+  static-analysis:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
